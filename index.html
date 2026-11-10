@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Brain Hackers: Fair oder Unfair?</title>
-<meta name="description" content="Interaktive Übungen zum Workshop „Brain Hackers: Fair oder Unfair? So denkt KI“ – ReDI School Berlin">
+<title>Brain Hackers: Fair or Unfair?</title>
+<meta name="description" content="Interactive exercises for the workshop “Brain Hackers: Fair or Unfair? How AI Thinks” – ReDI School Berlin">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400..700&family=Roboto+Flex:wght@400..700&display=swap">
@@ -39,6 +39,7 @@
   header h1 { color: var(--off-white); }
   header p { color: var(--peach); font-size: 1.05rem; max-width: 40rem; }
   .tag { display: inline-block; background: var(--hot-pink); color: var(--off-white); font-weight: 700; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; border-radius: 999px; padding: .35rem .9rem; margin-bottom: 1rem; }
+  .lang { float: right; color: var(--peach); font-weight: 600; text-decoration: underline; min-height: 44px; display: inline-flex; align-items: center; }
 
   nav { position: sticky; top: 0; z-index: 10; background: var(--off-white); border-bottom: 1px solid #efe3da; }
   nav ol { list-style: none; margin: 0 auto; padding: .5rem 1rem; max-width: 960px; display: flex; gap: .5rem; overflow-x: auto; }
@@ -59,19 +60,19 @@
 
   button { font: inherit; cursor: pointer; min-height: 44px; border-radius: 999px; border: 2px solid var(--plum); background: #fff; color: var(--plum); padding: .5rem 1.1rem; font-weight: 600; }
   button:hover { background: var(--lilac); }
-  button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+  button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
   button.primary { background: var(--hot-pink); border-color: var(--hot-pink); color: #fff; }
   button.primary:hover { background: #e62a6f; }
   .choices { display: flex; flex-wrap: wrap; gap: .5rem; margin: .75rem 0; }
   .question { font-weight: 700; color: var(--plum); }
   .hidden { display: none; }
 
-  /* ---------- Daten-Schalter (Agent-Bias / Agent-Fair) ---------- */
+  /* ---------- Data switch (Agent-Bias / Agent-Fair) ---------- */
   .data-switch { display: flex; flex-wrap: wrap; gap: .5rem; margin: .25rem 0 1.25rem; }
   .data-switch button.bias[aria-pressed="true"] { background: var(--hot-pink); border-color: var(--hot-pink); color: #fff; }
   .data-switch button.fair[aria-pressed="true"] { background: var(--green); border-color: var(--green); color: #fff; }
 
-  /* ---------- Viele Wege zur 2 ---------- */
+  /* ---------- Many ways to 2 ---------- */
   .calc-row { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
   .calc-row input { flex: 1 1 10rem; min-height: 52px; font: inherit; font-family: var(--head); font-size: 1.4rem; border: 2px solid var(--plum); border-radius: 12px; padding: .3rem .8rem; background: #fff; color: var(--brown); }
   .calc-row .eq { font-family: var(--head); font-size: 1.6rem; font-weight: 700; color: var(--plum); }
@@ -82,7 +83,7 @@
   .ok { color: var(--green); }
   .bad { color: #b3124f; }
 
-  /* ---------- Team-Maschine ---------- */
+  /* ---------- Team machine ---------- */
   .form-grid { display: grid; gap: .9rem; }
   label { display: block; font-weight: 600; color: var(--plum); margin-bottom: .3rem; }
   .form-grid input, .form-grid select { width: 100%; min-height: 48px; font: inherit; border: 2px solid #e2cfd9; border-radius: 12px; padding: .4rem .8rem; background: #fff; color: var(--brown); }
@@ -96,13 +97,13 @@
   .yes { color: var(--green); font-weight: 700; }
   .no { color: #b3124f; font-weight: 700; }
 
-  /* ---------- Tabelle ---------- */
+  /* ---------- Table ---------- */
   .table-wrap { overflow-x: auto; background: #fff; border-radius: 12px; }
   table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: .95rem; }
   th, td { text-align: left; padding: .5rem .6rem; border-bottom: 1px solid #f0e4dc; }
   th { background: var(--plum); color: var(--off-white); font-weight: 600; }
 
-  /* ---------- Nachdenken ---------- */
+  /* ---------- Think ---------- */
   .takeaways { display: grid; gap: 1rem; }
   .takeaway { font-family: var(--head); font-size: 1.3rem; font-weight: 700; color: var(--plum); margin: 0; }
   .num { display: inline-grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--hot-pink); color: #fff; font-weight: 700; margin-bottom: .5rem; }
@@ -125,93 +126,94 @@
 
 <header>
   <div class="wrap">
+    <a class="lang" href="../" hreflang="de" lang="de">Deutsch</a>
     <span class="tag">ReDI School Berlin · 11.11.2026</span>
-    <h1>Brain Hackers: Fair oder Unfair?</h1>
-    <p>So denkt KI. Probiere es selbst aus und finde heraus, wann eine Maschine unfair wird.</p>
+    <h1>Brain Hackers: Fair or Unfair?</h1>
+    <p>How AI thinks. Try it yourself and find out when a machine becomes unfair.</p>
   </div>
 </header>
 
-<nav aria-label="Übungen">
+<nav aria-label="Exercises">
   <ol>
-    <li><a href="#wege"><span>1</span>Viele Wege zur 2</a></li>
-    <li><a href="#team"><span>2</span>Zwei KI-Agenten</a></li>
-    <li><a href="#daten"><span>3</span>Wer schrieb die Daten?</a></li>
-    <li><a href="#nachdenken"><span>4</span>Nachdenken</a></li>
+    <li><a href="#ways"><span>1</span>Many ways to 2</a></li>
+    <li><a href="#team"><span>2</span>Two AI agents</a></li>
+    <li><a href="#data"><span>3</span>Who wrote the data?</a></li>
+    <li><a href="#think"><span>4</span>Think about it</a></li>
   </ol>
 </nav>
 
 <main>
 
-  <!-- ================= 1. VIELE WEGE ZUR 2 ================= -->
-  <section id="wege" aria-labelledby="h-wege">
-    <p class="step-label">Übung 1 · Algorithmus</p>
-    <h2 id="h-wege">Viele Wege zur 2</h2>
-    <p>Die meisten denken sofort an <b>1 + 1 = 2</b>. Aber gibt es noch andere Wege? Schreib eine Rechnung, die <b>2</b> ergibt.</p>
+  <!-- ================= 1. MANY WAYS TO 2 ================= -->
+  <section id="ways" aria-labelledby="h-ways">
+    <p class="step-label">Exercise 1 · Algorithm</p>
+    <h2 id="h-ways">Many ways to 2</h2>
+    <p>Most people think of <b>1 + 1 = 2</b> right away. But are there other ways? Write a calculation that equals <b>2</b>.</p>
 
     <div class="card sky">
       <form class="calc-row" id="way-form" autocomplete="off">
-        <input id="way-input" type="text" inputmode="text" maxlength="12" placeholder="z. B. 10 - 8" aria-label="Deine Rechnung">
+        <input id="way-input" type="text" inputmode="text" maxlength="12" placeholder="e.g. 10 - 8" aria-label="Your calculation">
         <span class="eq" aria-hidden="true">= 2?</span>
-        <button type="submit" class="primary">Prüfen</button>
+        <button type="submit" class="primary">Check</button>
       </form>
       <p class="msg" id="way-msg" aria-live="polite"></p>
-      <p class="question" style="margin:0">Alle richtigen Wege:</p>
-      <ul class="ways" id="ways" aria-label="Richtige Rechnungen">
+      <p class="question" style="margin:0">All correct ways:</p>
+      <ul class="ways" id="ways-list" aria-label="Correct calculations">
         <li class="popular">1 + 1</li>
       </ul>
     </div>
 
     <div class="card plum">
-      <h3>Und die KI?</h3>
-      <p>Eine KI liest Millionen Texte aus dem Internet. Wenn fast alle Menschen „1 + 1“ schreiben, zeigt die KI vielleicht nur <b>1 + 1</b>, als wäre es die einzige Antwort.</p>
-      <p style="margin:0">Die KI denkt nicht selbst. Sie wiederholt, was <b>viele Menschen</b> geschrieben haben, auch ihre Fehler.</p>
+      <h3>And the AI?</h3>
+      <p>An AI reads millions of texts from the internet. If almost everyone writes “1 + 1”, the AI might only show <b>1 + 1</b>, as if it were the only answer.</p>
+      <p style="margin:0">The AI does not think for itself. It repeats what <b>many people</b> have written, including their mistakes.</p>
     </div>
   </section>
 
-  <!-- ================= 2. ZWEI KI-AGENTEN ================= -->
+  <!-- ================= 2. TWO AI AGENTS ================= -->
   <section id="team" aria-labelledby="h-team">
-    <p class="step-label">Übung 2 · Die Team-Maschine</p>
-    <h2 id="h-team">Zwei KI-Agenten, ein Spieler</h2>
-    <p>Erfinde einen Spieler. Ein KI-Agent entscheidet, ob er ins Fußballteam kommt. Wähle zuerst, aus welchen <b>Daten</b> die KI gelernt hat.</p>
+    <p class="step-label">Exercise 2 · The Team Machine</p>
+    <h2 id="h-team">Two AI agents, one player</h2>
+    <p>Invent a player. An AI agent decides whether they get on the football team. First choose which <b>data</b> the AI learned from.</p>
 
     <div class="card">
-      <p class="question" style="margin-bottom:.4rem">Welche Daten benutzt die KI?</p>
-      <div class="data-switch" role="group" aria-label="Daten wählen">
-        <button type="button" class="bias" id="use-bias" aria-pressed="true">🔴 Alte Daten · Agent-Bias</button>
-        <button type="button" class="fair" id="use-fair" aria-pressed="false">🟢 Neue Daten · Agent-Fair</button>
+      <p class="question" style="margin-bottom:.4rem">Which data does the AI use?</p>
+      <div class="data-switch" role="group" aria-label="Choose data">
+        <button type="button" class="bias" id="use-bias" aria-pressed="true">🔴 Old data · Agent-Bias</button>
+        <button type="button" class="fair" id="use-fair" aria-pressed="false">🟢 New data · Agent-Fair</button>
       </div>
 
       <form id="team-form" class="form-grid" novalidate>
         <div>
-          <label for="f-name">Wie heißt du?</label>
-          <input id="f-name" type="text" autocomplete="off" maxlength="30" placeholder="z. B. Andre">
+          <label for="f-name">What is your name?</label>
+          <input id="f-name" type="text" autocomplete="off" maxlength="30" placeholder="e.g. Andre">
         </div>
         <div>
-          <label for="f-plz">Wie ist deine Postleitzahl? (5 Ziffern)</label>
-          <input id="f-plz" type="text" inputmode="numeric" maxlength="5" placeholder="z. B. 00026">
+          <label for="f-zip">What is your postcode? (5 digits)</label>
+          <input id="f-zip" type="text" inputmode="numeric" maxlength="5" placeholder="e.g. 00026">
         </div>
         <div>
-          <label for="f-schule">Wie heißt deine Schule?</label>
-          <select id="f-schule"></select>
+          <label for="f-school">What is your school called?</label>
+          <select id="f-school"></select>
         </div>
         <div>
-          <label for="f-monat">In welchem Monat bist du geboren?</label>
-          <select id="f-monat"></select>
+          <label for="f-month">Which month were you born in?</label>
+          <select id="f-month"></select>
         </div>
         <div>
-          <label for="f-profi">War dein Vater, Opa oder Onkel Fußballprofi?</label>
-          <select id="f-profi">
-            <option value="Ja">Ja</option>
-            <option value="Nein">Nein</option>
+          <label for="f-pro">Was your father, grandfather or uncle a pro footballer?</label>
+          <select id="f-pro">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
           </select>
         </div>
         <div>
-          <label for="f-tore">Wie viele Tore hast du geschossen?</label>
-          <input id="f-tore" type="number" inputmode="numeric" min="0" max="50" value="3">
+          <label for="f-goals">How many goals have you scored?</label>
+          <input id="f-goals" type="number" inputmode="numeric" min="0" max="50" value="3">
         </div>
       </form>
       <div class="choices">
-        <button type="button" id="team-btn" class="primary">Wer kommt ins Team?</button>
+        <button type="button" id="team-btn" class="primary">Who gets on the team?</button>
       </div>
       <p id="team-error" class="no" aria-live="polite"></p>
     </div>
@@ -219,57 +221,57 @@
     <div class="agents" id="agents" aria-live="polite"></div>
   </section>
 
-  <!-- ================= 3. WER SCHRIEB DIE DATEN ================= -->
-  <section id="daten" aria-labelledby="h-daten">
-    <p class="step-label">Übung 3 · Hinter der KI</p>
-    <h2 id="h-daten">Wer hat die Daten geschrieben?</h2>
-    <p>Warum entscheidet die KI so? Schau dir die Daten an, aus denen sie gelernt hat.</p>
+  <!-- ================= 3. WHO WROTE THE DATA ================= -->
+  <section id="data" aria-labelledby="h-data">
+    <p class="step-label">Exercise 3 · Behind the AI</p>
+    <h2 id="h-data">Who wrote the data?</h2>
+    <p>Why does the AI decide like this? Look at the data it learned from.</p>
     <div class="choices">
-      <button type="button" id="show-tables" class="primary" aria-expanded="false" aria-controls="tables">Daten zeigen</button>
+      <button type="button" id="show-tables" class="primary" aria-expanded="false" aria-controls="tables">Show data</button>
     </div>
 
     <div id="tables" class="hidden">
       <div class="card peach">
-        <p style="margin:0"><b>Ein Mensch</b> hat diese Tabelle geschrieben: Ivonne. Alle Daten sind erfunden. Was fällt dir auf? Schau auf die Spalten <b>„Profi in der Familie“</b> und <b>„Tore“</b>.</p>
+        <p style="margin:0"><b>A human</b> wrote this table: Ivonne. All the data is made up. What do you notice? Look at <b>“Pro in the family”</b>, the school, the postcode, the month … and the <b>goals</b>.</p>
       </div>
       <h3 id="table-title"></h3>
       <div class="table-wrap"><table id="table-active"></table></div>
     </div>
   </section>
 
-  <!-- ================= 4. NACHDENKEN ================= -->
-  <section id="nachdenken" aria-labelledby="h-nach">
-    <p class="step-label">Übung 4 · Nachdenken</p>
-    <h2 id="h-nach">Was nimmst du mit?</h2>
+  <!-- ================= 4. THINK ABOUT IT ================= -->
+  <section id="think" aria-labelledby="h-think">
+    <p class="step-label">Exercise 4 · Think about it</p>
+    <h2 id="h-think">What do you take away?</h2>
     <div class="takeaways">
       <div class="card mint">
         <span class="num">1</span>
-        <p class="takeaway">KI denkt nicht. Sie lernt aus Daten, die Menschen geschrieben haben.</p>
+        <p class="takeaway">AI does not think. It learns from data that humans wrote.</p>
       </div>
       <div class="card lilac">
         <span class="num">2</span>
-        <p class="takeaway">Menschen machen Fehler. Darum ist KI nicht immer fair.</p>
+        <p class="takeaway">Humans make mistakes. That is why AI is not always fair.</p>
       </div>
     </div>
     <div class="card peach">
-      <p class="question">Frag immer: Wer hat die Daten geschrieben? Und wer fehlt?</p>
-      <p style="margin:0">Diese Seite speichert nichts. Alles bleibt auf deinem Gerät.</p>
+      <p class="question">Always ask: Who wrote the data? And who is missing?</p>
+      <p style="margin:0">This page saves nothing. Everything stays on your device.</p>
     </div>
   </section>
 
 </main>
 
 <footer>
-  Brain Hackers · Ivonne Benites &amp; Rafika Tijani · ReDI School Berlin · Diese Seite sammelt keine Daten.
+  Brain Hackers · Ivonne Benites &amp; Rafika Tijani · ReDI School Berlin · This page collects no data.
 </footer>
 
 <script>
 /* =========================================================
-   1. VIELE WEGE ZUR 2
-   Nur EINE Rechnung mit zwei Zahlen: + - × ÷ (auch * / : x)
+   1. MANY WAYS TO 2
+   Only ONE calculation with two numbers: + - × ÷ (also * / : x)
    ========================================================= */
 const ways = new Set(["1 + 1"]);
-const wayList = document.getElementById("ways");
+const wayList = document.getElementById("ways-list");
 const wayMsg = document.getElementById("way-msg");
 
 document.getElementById("way-form").addEventListener("submit", (e) => {
@@ -278,7 +280,7 @@ document.getElementById("way-form").addEventListener("submit", (e) => {
   const m = raw.match(/^(\d{1,4})\s*([+\-−*×x\/÷:])\s*(\d{1,4})$/i);
   if (!m) {
     wayMsg.className = "msg bad";
-    wayMsg.textContent = "Schreib eine Rechnung mit zwei Zahlen, z. B. 10 - 8.";
+    wayMsg.textContent = "Write a calculation with two numbers, e.g. 10 - 8.";
     return;
   }
   const a = Number(m[1]), b = Number(m[3]);
@@ -292,97 +294,96 @@ document.getElementById("way-form").addEventListener("submit", (e) => {
   if (result === 2) {
     wayMsg.className = "msg ok";
     if (ways.has(pretty)) {
-      wayMsg.textContent = `Richtig! ${pretty} = 2. Diesen Weg hat schon jemand gefunden.`;
+      wayMsg.textContent = `Correct! ${pretty} = 2. Someone already found this way.`;
     } else {
       ways.add(pretty);
       const li = document.createElement("li");
       li.textContent = pretty;
       wayList.appendChild(li);
-      wayMsg.textContent = `Richtig! ${pretty} = 2. Ein neuer Weg!`;
+      wayMsg.textContent = `Correct! ${pretty} = 2. A new way!`;
     }
     document.getElementById("way-input").value = "";
   } else {
     wayMsg.className = "msg bad";
     wayMsg.textContent = Number.isFinite(result)
-      ? `${pretty} = ${Number.isInteger(result) ? result : result.toFixed(2)}. Das ist nicht 2. Probier es nochmal!`
-      : "Durch 0 teilen geht nicht. Probier es nochmal!";
+      ? `${pretty} = ${Number.isInteger(result) ? result : result.toFixed(2)}. That is not 2. Try again!`
+      : "You can't divide by 0. Try again!";
   }
 });
 
 /* =========================================================
-   2. KI-AGENTEN
-   Daten aus bias-table.md (Alte Daten) und fair-table.md (Neue Daten)
-   Spalten: Kind, PLZ, Schule, Geburtsmonat, Profi, Tore, Gewählt
-   Neue Zeilen hier einfügen (gleich wie in den .md-Dateien).
+   2. AI AGENTS
+   Same data as the German page (bias-table.md and fair-table.md)
+   Columns: Child, Postcode, School, Birth month, Pro, Goals, Chosen
    ========================================================= */
-const ALTE_DATEN = [
-  ["Philipp",  "00028", "Pixel-Schule",    "Januar",   "Ja",   5, "Ja"],
-  ["Tommaso",  "00016", "Raketen-Schule",  "März",     "Ja",   2, "Ja"],
-  ["Luke",     "00026", "Pixel-Schule",    "Februar",  "Ja",   3, "Ja"],
-  ["Hugo",     "00027", "Pixel-Schule",    "Februar",  "Ja",   2, "Ja"],
-  ["Marco",    "00018", "Planeten-Schule", "Dezember", "Nein", 9, "Nein"],
-  ["Elvis",    "00032", "Mond-Akademie",   "November", "Nein", 8, "Nein"],
-  ["Fernando", "00045", "Mond-Akademie",   "Dezember", "Nein", 9, "Nein"],
-  ["Albert",   "00033", "Mond-Akademie",   "Oktober",  "Nein", 7, "Nein"],
-  ["Luis",     "00030", "Planeten-Schule", "Januar",   "Nein", 8, "Nein"]
+const OLD_DATA = [
+  ["Philipp",  "00028", "Pixel School",   "January",  "Yes", 5, "Yes"],
+  ["Tommaso",  "00016", "Rocket School",  "March",    "Yes", 2, "Yes"],
+  ["Luke",     "00026", "Pixel School",   "February", "Yes", 3, "Yes"],
+  ["Hugo",     "00027", "Pixel School",   "February", "Yes", 2, "Yes"],
+  ["Marco",    "00018", "Planet School",  "December", "No",  9, "No"],
+  ["Elvis",    "00032", "Moon Academy",   "November", "No",  8, "No"],
+  ["Fernando", "00045", "Moon Academy",   "December", "No",  9, "No"],
+  ["Albert",   "00033", "Moon Academy",   "October",  "No",  7, "No"],
+  ["Luis",     "00030", "Planet School",  "January",  "No",  8, "No"]
 ];
-const NEUE_DATEN = [
-  ["Sergio",     "00046", "Mond-Akademie",   "September", "Nein", 9, "Ja"],
-  ["Gianluca",   "00045", "Mond-Akademie",   "März",      "Nein", 9, "Ja"],
-  ["Hans",       "00043", "Planeten-Schule", "April",     "Nein", 8, "Ja"],
-  ["Adrian",     "00042", "Raketen-Schule",  "Juni",      "Nein", 7, "Ja"],
-  ["Oskar",      "00026", "Pixel-Schule",    "Juli",      "Ja",   3, "Nein"],
-  ["Terence",    "00025", "Pixel-Schule",    "Februar",   "Ja",   1, "Nein"],
-  ["Cesar",      "00028", "Raketen-Schule",  "Januar",    "Ja",   8, "Ja"],
-  ["Greg",       "00030", "Pixel-Schule",    "März",      "Ja",   9, "Ja"],
-  ["Jean-Louis", "00047", "Mond-Akademie",   "Dezember",  "Nein", 2, "Nein"],
-  ["Marcelo",    "00045", "Raketen-Schule",  "August",    "Nein", 1, "Nein"],
-  ["Fabrizio",   "00042", "Mond-Akademie",   "Juli",      "Nein", 3, "Nein"],
-  ["Tim",        "00044", "Raketen-Schule",  "November",  "Nein", 4, "Nein"]
+const NEW_DATA = [
+  ["Sergio",     "00046", "Moon Academy",   "September", "No",  9, "Yes"],
+  ["Gianluca",   "00045", "Moon Academy",   "March",     "No",  9, "Yes"],
+  ["Hans",       "00043", "Planet School",  "April",     "No",  8, "Yes"],
+  ["Adrian",     "00042", "Rocket School",  "June",      "No",  7, "Yes"],
+  ["Oskar",      "00026", "Pixel School",   "July",      "Yes", 3, "No"],
+  ["Terence",    "00025", "Pixel School",   "February",  "Yes", 1, "No"],
+  ["Cesar",      "00028", "Rocket School",  "January",   "Yes", 8, "Yes"],
+  ["Greg",       "00030", "Pixel School",   "March",     "Yes", 9, "Yes"],
+  ["Jean-Louis", "00047", "Moon Academy",   "December",  "No",  2, "No"],
+  ["Marcelo",    "00045", "Rocket School",  "August",    "No",  1, "No"],
+  ["Fabrizio",   "00042", "Moon Academy",   "July",      "No",  3, "No"],
+  ["Tim",        "00044", "Rocket School",  "November",  "No",  4, "No"]
 ];
 
-const MONATE = ["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"];
-const SCHULEN = ["Pixel-Schule", "Raketen-Schule", "Planeten-Schule", "Mond-Akademie"];
+const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const SCHOOLS = ["Pixel School", "Rocket School", "Planet School", "Moon Academy"];
 
 function fillSelect(id, values) {
   const sel = document.getElementById(id);
   values.forEach((v) => { const o = document.createElement("option"); o.value = v; o.textContent = v; sel.appendChild(o); });
 }
-fillSelect("f-schule", SCHULEN);
-fillSelect("f-monat", MONATE);
+fillSelect("f-school", SCHOOLS);
+fillSelect("f-month", MONTHS);
 
-/* Agent-Bias: vergleicht ALLE 5 Spalten gleich stark */
+/* Agent-Bias: compares ALL 5 columns equally */
 function similarityAll(kid, row) {
-  const [, plz, schule, monat, profi, tore] = row;
-  const plzScore = Math.max(0, 1 - Math.abs(Number(kid.plz) - Number(plz)) / 20);
-  const schuleScore = kid.schule === schule ? 1 : 0;
-  const m1 = MONATE.indexOf(kid.monat), m2 = MONATE.indexOf(monat);
+  const [, zip, school, month, pro, goals] = row;
+  const zipScore = Math.max(0, 1 - Math.abs(Number(kid.zip) - Number(zip)) / 20);
+  const schoolScore = kid.school === school ? 1 : 0;
+  const m1 = MONTHS.indexOf(kid.month), m2 = MONTHS.indexOf(month);
   const mDiff = Math.min(Math.abs(m1 - m2), 12 - Math.abs(m1 - m2));
-  const monatScore = 1 - mDiff / 6;
-  const profiScore = kid.profi === profi ? 1 : 0;
-  const toreScore = Math.max(0, 1 - Math.abs(kid.tore - tore) / 10);
-  return plzScore + schuleScore + monatScore + profiScore + toreScore;
+  const monthScore = 1 - mDiff / 6;
+  const proScore = kid.pro === pro ? 1 : 0;
+  const goalScore = Math.max(0, 1 - Math.abs(kid.goals - goals) / 10);
+  return zipScore + schoolScore + monthScore + proScore + goalScore;
 }
-/* Agent-Fair: vergleicht NUR die Tore */
-function similarityTore(kid, row) {
-  return -Math.abs(kid.tore - row[5]);
+/* Agent-Fair: compares ONLY the goals */
+function similarityGoals(kid, row) {
+  return -Math.abs(kid.goals - row[5]);
 }
 
-/* Die zwei Agenten: nur EINER ist aktiv, je nach Daten */
+/* The two agents: only ONE is active, depending on the data */
 const AGENTS = {
   bias: {
-    title: "Agent-Bias · Alte Daten",
-    rule: "Hat aus alten Entscheidungen gelernt. Vergleicht alles: PLZ, Schule, Monat, Familie und Tore.",
+    title: "Agent-Bias · Old data",
+    rule: "Learned from old decisions. Compares everything: postcode, school, month, family and goals.",
     color: "pink",
-    data: ALTE_DATEN,
+    data: OLD_DATA,
     sim: similarityAll
   },
   fair: {
-    title: "Agent-Fair · Neue Daten",
-    rule: "Hat aus fairen Entscheidungen gelernt. Vergleicht nur, was beim Fußball zählt: die Tore.",
+    title: "Agent-Fair · New data",
+    rule: "Learned from fair decisions. Compares only what matters in football: the goals.",
     color: "mint",
-    data: NEUE_DATEN,
-    sim: similarityTore
+    data: NEW_DATA,
+    sim: similarityGoals
   }
 };
 let activeAgent = "bias";
@@ -391,7 +392,7 @@ let lastKid = null;
 function decide(kid, table, simFn) {
   const ranked = table.map((row) => ({ row, score: simFn(kid, row) }))
     .sort((a, b) => b.score - a.score).slice(0, 3);
-  const yes = ranked.filter((r) => r.row[6] === "Ja").length;
+  const yes = ranked.filter((r) => r.row[6] === "Yes").length;
   return { inTeam: yes >= 2, neighbors: ranked.map((r) => r.row) };
 }
 
@@ -404,12 +405,12 @@ function agentCard(agent, kidName, result) {
     <div class="card ${agent.color}">
       <p class="agent-title">${agent.title}</p>
       <p class="agent-rule">${agent.rule}</p>
-      <p class="verdict">${result.inTeam ? "✅ Ja, " + escapeHtml(kidName) + " ist im Team!" : "❌ Nein, leider nicht."}</p>
-      <p>Verglichen mit diesen 3 Spielern:</p>
+      <p class="verdict">${result.inTeam ? "✅ Yes, " + escapeHtml(kidName) + " is on the team!" : "❌ No, sorry, not this time."}</p>
+      <p>Compared with these 3 players:</p>
       <ul class="neighbors">
         ${result.neighbors.map((r) => `
-          <li><b>${escapeHtml(r[0])}</b>: ${escapeHtml(r[2])}, Profi in der Familie: ${r[4]}, ${r[5]} Tore
-          → <span class="${r[6] === "Ja" ? "yes" : "no"}">${r[6] === "Ja" ? "im Team" : "nicht im Team"}</span></li>`).join("")}
+          <li><b>${escapeHtml(r[0])}</b>: ${escapeHtml(r[2])}, pro in the family: ${r[4]}, ${r[5]} goals
+          → <span class="${r[6] === "Yes" ? "yes" : "no"}">${r[6] === "Yes" ? "on the team" : "not on the team"}</span></li>`).join("")}
       </ul>
     </div>`;
 }
@@ -427,7 +428,7 @@ function setAgent(key) {
   document.getElementById("use-bias").setAttribute("aria-pressed", String(key === "bias"));
   document.getElementById("use-fair").setAttribute("aria-pressed", String(key === "fair"));
   renderActiveTable();
-  if (lastKid) showResult(lastKid, false); // gleicher Spieler, neuer Agent
+  if (lastKid) showResult(lastKid, false); // same player, new agent
 }
 document.getElementById("use-bias").addEventListener("click", () => setAgent("bias"));
 document.getElementById("use-fair").addEventListener("click", () => setAgent("fair"));
@@ -435,26 +436,26 @@ document.getElementById("use-fair").addEventListener("click", () => setAgent("fa
 document.getElementById("team-btn").addEventListener("click", () => {
   const err = document.getElementById("team-error");
   const kid = {
-    name: document.getElementById("f-name").value.trim() || "Der Spieler",
-    plz: document.getElementById("f-plz").value.trim(),
-    schule: document.getElementById("f-schule").value,
-    monat: document.getElementById("f-monat").value,
-    profi: document.getElementById("f-profi").value,
-    tore: Number(document.getElementById("f-tore").value)
+    name: document.getElementById("f-name").value.trim() || "The player",
+    zip: document.getElementById("f-zip").value.trim(),
+    school: document.getElementById("f-school").value,
+    month: document.getElementById("f-month").value,
+    pro: document.getElementById("f-pro").value,
+    goals: Number(document.getElementById("f-goals").value)
   };
-  if (!/^\d{5}$/.test(kid.plz)) { err.textContent = "Bitte gib eine Postleitzahl mit genau 5 Ziffern ein."; return; }
-  if (!Number.isInteger(kid.tore) || kid.tore < 0) { err.textContent = "Bitte gib eine ganze Zahl für die Tore ein."; return; }
+  if (!/^\d{5}$/.test(kid.zip)) { err.textContent = "Please enter a postcode with exactly 5 digits."; return; }
+  if (!Number.isInteger(kid.goals) || kid.goals < 0) { err.textContent = "Please enter a whole number for the goals."; return; }
   err.textContent = "";
   lastKid = kid;
   showResult(kid, true);
 });
 
 /* =========================================================
-   3. TABELLE ZEIGEN – nur die Daten des aktiven Agenten
+   3. SHOW TABLE – only the data of the active agent
    ========================================================= */
 function renderTable(id, data) {
-  const head = "<tr><th>Kind</th><th>PLZ</th><th>Schule</th><th>Monat</th><th>Profi in der Familie</th><th>Tore</th><th>Gewählt?</th></tr>";
-  const rows = data.map((r) => `<tr><td>${escapeHtml(r[0])}</td><td>${r[1]}</td><td>${escapeHtml(r[2])}</td><td>${r[3]}</td><td>${r[4]}</td><td>${r[5]}</td><td class="${r[6] === "Ja" ? "yes" : "no"}">${r[6]}</td></tr>`).join("");
+  const head = "<tr><th>Child</th><th>Postcode</th><th>School</th><th>Month</th><th>Pro in the family</th><th>Goals</th><th>Chosen?</th></tr>";
+  const rows = data.map((r) => `<tr><td>${escapeHtml(r[0])}</td><td>${r[1]}</td><td>${escapeHtml(r[2])}</td><td>${r[3]}</td><td>${r[4]}</td><td>${r[5]}</td><td class="${r[6] === "Yes" ? "yes" : "no"}">${r[6]}</td></tr>`).join("");
   document.getElementById(id).innerHTML = head + rows;
 }
 function renderActiveTable() {
@@ -469,7 +470,7 @@ showBtn.addEventListener("click", () => {
   const box = document.getElementById("tables");
   const open = box.classList.toggle("hidden") === false;
   showBtn.setAttribute("aria-expanded", String(open));
-  showBtn.textContent = open ? "Daten verstecken" : "Daten zeigen";
+  showBtn.textContent = open ? "Hide data" : "Show data";
 });
 </script>
 </body>
